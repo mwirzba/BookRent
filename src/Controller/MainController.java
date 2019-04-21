@@ -11,7 +11,7 @@ import javafx.scene.layout.StackPane;
 import java.io.IOException;
 
 
-public class mainController {
+public class MainController {
 
     @FXML
     private StackPane mainView;
@@ -30,7 +30,13 @@ public class mainController {
 
             e.printStackTrace();
         }
+        LoginController loginController = loader.getController();
+        loginController.setMainController(this);
+        setScreen(pane);
+    }
 
+    public void setScreen(Pane pane) {
+        mainView.getChildren().clear();
         mainView.getChildren().add(pane);
     }
 

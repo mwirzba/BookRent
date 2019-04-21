@@ -1,14 +1,20 @@
 package Controller;
 
+import Model.DbManager;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 
+import java.io.IOException;
 import java.sql.*;
 
 public class LoginController {
+
+    private MainController mainController;
 
     @FXML
     private Pane loginView;
@@ -24,14 +30,17 @@ public class LoginController {
     @FXML
     private  Label wrongLogininfo;
 
+    public void setMainController(MainController mainController) {
+        this.mainController = mainController;
+    }
+
+
     @FXML
     public void login(){
-
         wrongLogininfo.setText("");
         try {
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            Connection conn = DriverManager.getConnection("jdbc:sqlserver://" +
-                    "DESKTOP-QCG1H25\\SQLEXPRESS;database=BookRentDatabase","user","user");
+            DbManager dbManager = DbManager.getInstance();
+            Connection conn = dbManager.getConn();
 
             PreparedStatement statement = null;
             String loginSelect = "select login,password from Customer where login = ? and password = ?";
@@ -52,10 +61,19 @@ public class LoginController {
             {
                 wrongLogininfo.setText("Wrong login or password");
             }
+            else
+            {
+                FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/View/adminPanel.fxml"));
+                Pane pane = null;
+                try {
+                    pane = loader.load();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                mainController.setScreen(pane);
 
+            }
 
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
         }

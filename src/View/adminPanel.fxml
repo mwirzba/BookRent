@@ -12,11 +12,12 @@
          <children>
             <Button fx:id="showCustomersButton" layoutX="26.0" layoutY="278.0" mnemonicParsing="false" onAction="#showCustomers" prefHeight="25.0" prefWidth="148.0" text="Pokaz użytkowników" />
             <Button fx:id="addChoice" layoutX="26.0" layoutY="30.0" mnemonicParsing="false" onAction="#openAddPanel" prefHeight="25.0" prefWidth="148.0" text="Dodaj użytkownika" />
-            <Button fx:id="findUserButton" layoutX="26.0" layoutY="200.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="148.0" text="Znajdź " />
-            <TextField fx:id="findUserBox" layoutX="72.0" layoutY="161.0" prefHeight="25.0" prefWidth="91.0" />
+            <Button fx:id="findCustomerButton" layoutX="26.0" layoutY="200.0" mnemonicParsing="false" onAction="#findCustomer" prefHeight="25.0" prefWidth="148.0" text="Znajdź " />
+            <TextField fx:id="findCustomerTextField" layoutX="72.0" layoutY="161.0" prefHeight="25.0" prefWidth="91.0" />
             <Label layoutX="27.0" layoutY="165.0" text="LOGIN" />
             <Label layoutX="26.0" layoutY="125.0" prefHeight="17.0" prefWidth="148.0" text="ZNAJDŹ UŻYTKOWNIKA" />
-            <Label fx:id="userNotFound" layoutX="25.0" layoutY="240.0" prefHeight="17.0" prefWidth="148.0" />
+            <Label fx:id="userNotFoundMessege" layoutX="25.0" layoutY="240.0" prefHeight="17.0" prefWidth="148.0" />
+            <Label fx:id="userMessage" layoutX="28.0" layoutY="240.0" prefHeight="17.0" prefWidth="148.0" />
          </children>
       </Pane>
       <Pane fx:id="adminViewPane" prefHeight="400.0" prefWidth="402.0" />

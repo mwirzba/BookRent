@@ -22,7 +22,7 @@ public class DbManager {
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             conn = DriverManager.getConnection("jdbc:sqlserver://" +
-                    "DESKTOP-QCG1H25\\SQLEXPRESS;database=BookRentDatabase", "user", "user");
+                    "DESKTOP-QCG1H25\\SQLEXPRESS;database=BookRentDatabase", "admin", "admin");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {

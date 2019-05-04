@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DbManager {
-    private static DbManager ourInstance = new DbManager();
+    private static DbManager dbManager = new DbManager();
 
     public Connection getConn() {
         return conn;
@@ -14,7 +14,7 @@ public class DbManager {
     private Connection conn;
 
     public static DbManager getInstance() {
-        return ourInstance;
+        return dbManager;
     }
 
     private DbManager() {

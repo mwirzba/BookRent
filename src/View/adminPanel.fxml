@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 
-<HBox fx:id="adminPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminController">
+<HBox fx:id="adminPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminControllers.AdminController">
    <children>
       <Pane fx:id="buttonPane" prefHeight="200.0" prefWidth="200.0">
          <children>
@@ -20,6 +20,6 @@
             <Label fx:id="userMessage" layoutX="28.0" layoutY="240.0" prefHeight="17.0" prefWidth="148.0" />
          </children>
       </Pane>
-      <Pane fx:id="adminViewPane" prefHeight="400.0" prefWidth="402.0" />
+      <Pane fx:id="adminViewPane" prefHeight="400.0" prefWidth="400.0" />
    </children>
 </HBox>

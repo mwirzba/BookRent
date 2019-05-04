@@ -1,4 +1,4 @@
-package Controller;
+package Controller.AdminControllers;
 
 import Model.DbManager;
 import javafx.fxml.FXML;

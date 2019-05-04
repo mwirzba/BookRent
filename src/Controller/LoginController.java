@@ -1,5 +1,6 @@
 package Controller;
 
+import Controller.UserControllers.UserController;
 import Model.DbManager;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -63,20 +64,35 @@ public class LoginController {
             }
             else
             {
-                FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/View/adminPanel.fxml"));
-                Pane pane = null;
-                try {
-                    pane = loader.load();
-                } catch (IOException e) {
-                    e.printStackTrace();
+                if(login.equals("admin")) {
+                    loadPane("/View/adminPanel.fxml",login);
                 }
-                mainController.setScreen(pane);
-
+                else
+                {
+                    loadPane("/View/userPanel.fxml",login);
+                }
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    private void loadPane(String s,String login) {
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource(s));
+        Pane pane = null;
+        try {
+            pane = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if(s.equals("/View/userPanel.fxml"))
+        {
+            UserController userController = loader.getController();
+            userController.setCurrentUserLogin(login);
+        }
+
+        mainController.setScreen(pane);
     }
 
 

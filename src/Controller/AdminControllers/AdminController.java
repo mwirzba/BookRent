@@ -1,4 +1,4 @@
-package Controller;
+package Controller.AdminControllers;
 
 import Model.DbManager;
 import javafx.fxml.FXML;
@@ -68,7 +68,7 @@ public class AdminController {
    @FXML
     void showCustomers()
     {
-        FXMLLoader loader = new  FXMLLoader(this.getClass().getResource("/View/Customers.fxml"));
+        FXMLLoader loader = new  FXMLLoader(this.getClass().getResource("/View/CustomersList.fxml"));
         Pane customers = null;
         try {
             customers = loader.load();

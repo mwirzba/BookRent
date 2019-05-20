@@ -1,6 +1,8 @@
 package Controller;
 
+import Controller.AdminControllers.AdminController;
 import Controller.UserControllers.UserController;
+import Model.CurrentUser;
 import Model.DbManager;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +14,8 @@ import javafx.scene.layout.StackPane;
 
 import java.io.IOException;
 import java.sql.*;
+import java.text.DateFormat;
+import java.time.LocalDate;
 
 public class LoginController {
 
@@ -64,6 +68,25 @@ public class LoginController {
             }
             else
             {
+                String selectID = "select Id from Customer where login = ?";
+
+                statement = conn.prepareStatement(selectID);
+                statement.setString(1,login);
+
+                int Idlogin;
+
+                ResultSet resultSet = statement.executeQuery();
+                if(resultSet.next())
+                {
+                    Idlogin = resultSet.getInt(1);
+                    String insertLogin = "insert  into LoginsHistory(LoggedDate,Login) values (CURRENT_TIMESTAMP ,?)";
+                    CurrentUser.Id= Idlogin;
+                    statement = conn.prepareStatement(insertLogin);
+                    statement.setString(1,login);
+                    statement.execute();
+
+                }
+
                 if(login.equals("admin")) {
                     loadPane("/View/adminPanel.fxml",login);
                 }
@@ -90,8 +113,12 @@ public class LoginController {
         {
             UserController userController = loader.getController();
             userController.setCurrentUserLogin(login);
+            userController.setMainController(mainController);
         }
-
+        else {
+            AdminController adminController = loader.getController();
+            adminController.setMainController(mainController);
+        }
         mainController.setScreen(pane);
     }
 

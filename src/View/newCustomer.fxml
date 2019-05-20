@@ -5,14 +5,14 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminControllers.NewCustomerController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminControllers.NewCustomerController">
    <children>
-      <Label layoutX="92.0" layoutY="31.0" prefHeight="17.0" prefWidth="116.0" text="NOWY UŻYTKOWNIK" />
-      <TextField fx:id="loginTextField" layoutX="80.0" layoutY="88.0" />
-      <TextField fx:id="passwordTextField" layoutX="80.0" layoutY="138.0" />
-      <Label layoutX="14.0" layoutY="92.0" text="LOGIN" />
-      <Label layoutX="13.0" layoutY="142.0" text="HASŁO" />
-      <Button fx:id="addButton" layoutX="123.0" layoutY="184.0" mnemonicParsing="false" onAction="#addNewCustomer" text="ZAPISZ" />
-      <Label fx:id="customerExistsMessage" layoutX="86.0" layoutY="235.0" prefHeight="17.0" prefWidth="149.0" />
+      <Label layoutX="98.0" layoutY="33.0" prefHeight="38.0" prefWidth="192.0" text="         NOWY UŻYTKOWNIK" />
+      <TextField fx:id="loginTextField" layoutX="126.0" layoutY="92.0" />
+      <TextField fx:id="passwordTextField" layoutX="126.0" layoutY="142.0" />
+      <Label layoutX="54.0" layoutY="92.0" text="LOGIN" />
+      <Label layoutX="53.0" layoutY="142.0" text="HASŁO" />
+      <Button fx:id="addButton" layoutX="175.0" layoutY="194.0" mnemonicParsing="false" onAction="#addNewCustomer" text="ZAPISZ" />
+      <Label fx:id="customerExistsMessage" layoutX="62.0" layoutY="235.0" prefHeight="55.0" prefWidth="308.0" styleClass="message" />
    </children>
 </Pane>

@@ -19,6 +19,10 @@ public class MainController {
 
     @FXML
     void initialize(){
+        loadMenuScreen();
+    }
+
+    public void loadMenuScreen() {
         FXMLLoader loader =  new FXMLLoader();
         String path =  "/View/login.fxml";
         loader.setLocation(this.getClass().getResource(path));

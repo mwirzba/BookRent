@@ -37,32 +37,32 @@ public class NewCustomerController {
     {
         Connection conn = DbManager.getInstance().getConn();
         customerExistsMessage.setText("");
-        try {
 
-            PreparedStatement statement = null;
-            statement = conn.prepareStatement( "select login from Customer where login = ?");
-            statement.setString(1,loginTextField.getText());
-            ResultSet rs = statement.executeQuery();
-            if (rs.next())
-            {
-                customerExistsMessage.setText("Uzytkownik istnieje");
-            }
+            if(loginTextField.getText().isEmpty() ||  passwordTextField.getText().isEmpty()){customerExistsMessage.setText("PODAJ DANE");}
             else {
+                try {
+                    PreparedStatement statement = null;
+                    statement = conn.prepareStatement("select login from Customer where login = ?");
+                    statement.setString(1, loginTextField.getText());
+                    ResultSet rs = statement.executeQuery();
+                    if (rs.next()) {
+                        customerExistsMessage.setText("Uzytkownik istnieje");
+                    } else {
 
 
-                String loginSelect = "insert  into Customer values(?,?)";
-                statement = conn.prepareStatement(loginSelect);
-                statement.setString(1, loginTextField.getText());
-                statement.setString(2, passwordTextField.getText());
-                statement.execute();
-                customerExistsMessage.setText("Pomyślnie dodano użytkownika");
+                        String loginSelect = "insert  into Customer(login,password) values(?,?)";
+                        statement = conn.prepareStatement(loginSelect);
+                        statement.setString(1, loginTextField.getText());
+                        statement.setString(2, passwordTextField.getText());
+                        statement.execute();
+                        customerExistsMessage.setText("Pomyślnie dodano użytkownika");
 
+                    }
+
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
     }
 
 }

@@ -28,7 +28,15 @@ public class EditCustomerController {
     Label userMessage;
 
     @FXML
+    Button deleteButton;
+
+    @FXML
     void initialize()
+    {
+        EditCustomerController();
+    }
+
+    public void  EditCustomerController()
     {
         Connection conn = DbManager.getInstance().getConn();
         try {

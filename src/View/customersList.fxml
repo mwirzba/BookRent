@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminControllers.CustomersListController">
+   <children>
+      <TableView fx:id="customersTable" layoutX="22.0" layoutY="12.0" prefHeight="573.0" prefWidth="266.0" stylesheets="@../styles/tableViewStyle.css">
+        <columns>
+          <TableColumn fx:id="Id" prefWidth="64.0" text="ID" />
+          <TableColumn fx:id="login" prefWidth="201.0" text="login" />
+        </columns>
+      </TableView>
+   </children>
+</Pane>

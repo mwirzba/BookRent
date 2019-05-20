@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane fx:id="rentalsListPAne" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.UserControllers.RentalsListController">
+   <children>
+      <TableView fx:id="rentalsListTable" layoutX="14.0" layoutY="18.0" prefHeight="557.0" prefWidth="376.0" stylesheets="@../styles/tableViewStyle.css">
+        <columns>
+          <TableColumn fx:id="title" prefWidth="75.0" text="Tytuł" />
+          <TableColumn fx:id="dateRented" prefWidth="154.0" text="Data wypożyczenia" />
+            <TableColumn fx:id="dateReturned" prefWidth="146.0" text="Data zwrotu" />
+        </columns>
+      </TableView>
+   </children>
+</Pane>

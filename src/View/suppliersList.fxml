@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="428.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminControllers.SuppliersListController">
+   <children>
+      <TableView fx:id="suppliersTable" layoutX="5.0" layoutY="14.0" prefHeight="564.0" prefWidth="414.0" stylesheets="@../styles/tableViewStyle.css">
+        <columns>
+          <TableColumn fx:id="name" prefWidth="119.0" text="Nazwa" />
+          <TableColumn fx:id="city" prefWidth="137.0" text="Miasto" />
+            <TableColumn fx:id="street" prefWidth="98.0" text="Ulica" />
+            <TableColumn fx:id="number" minWidth="0.0" prefWidth="59.0" text="Numer" />
+        </columns>
+      </TableView>
+   </children>
+</Pane>

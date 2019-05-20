@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminControllers.EditCustomerController">
+   <children>
+      <Label layoutX="41.0" layoutY="108.0" text="LOGIN" />
+      <Label layoutX="106.0" layoutY="37.0" prefHeight="42.0" prefWidth="188.0" styleClass="header" text="EDYTUJ UŻYTKOWNIKA" />
+      <Label layoutX="37.0" layoutY="154.0" text="HASŁO" />
+      <Button fx:id="saveButton" layoutX="106.0" layoutY="218.0" mnemonicParsing="false" onAction="#EditCustomer" prefHeight="23.0" prefWidth="67.0" text="ZAPISZ" />
+      <TextField fx:id="loginTextField" layoutX="114.0" layoutY="108.0" />
+      <TextField fx:id="passwordTextField" layoutX="114.0" layoutY="154.0" />
+      <Label fx:id="userMessage" layoutX="72.0" layoutY="275.0" prefHeight="17.0" prefWidth="232.0" styleClass="message" />
+      <Button fx:id="deleteButton" layoutX="200.0" layoutY="218.0" mnemonicParsing="false" onAction="#DeleteCustomer" prefHeight="23.0" prefWidth="67.0" text="USUŃ" />
+   </children>
+</Pane>

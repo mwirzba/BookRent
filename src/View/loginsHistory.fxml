@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminControllers.LoginsHistoryController">
+   <children>
+      <TableView fx:id="loginsHistoryTable" layoutX="15.0" layoutY="16.0" prefHeight="562.0" prefWidth="280.0" stylesheets="@../styles/tableViewStyle.css">
+        <columns>
+          <TableColumn fx:id="login" prefWidth="114.0" text="Login" />
+          <TableColumn fx:id="LoggedDate" prefWidth="165.0" text="Login Date" />
+        </columns>
+      </TableView>
+   </children>
+</Pane>

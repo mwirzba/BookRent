@@ -1,4 +1,4 @@
-package Controller;
+package Controller.AdminControllers;
 
 import Model.Book;
 import Model.Customer;
@@ -17,19 +17,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class BooksListController implements Initializable {
+public class BooksListController  implements Initializable {
 
     @FXML
-    private TableView<Book> bookTable;
-
-    @FXML
-    private TableColumn<Book,String> Id;
-
-    @FXML
-    private TableColumn<Book,String> Author;
+    private TableView<Book> booksTable;
 
     @FXML
     private TableColumn<Book,String> Title;
+
+    @FXML
+    private TableColumn<Book,String> Author;
 
     private ObservableList<Book> books = FXCollections.observableArrayList();
 
@@ -38,19 +35,19 @@ public class BooksListController implements Initializable {
         Connection conn = DbManager.getInstance().getConn();
 
         try {
-            ResultSet rs = conn.createStatement().executeQuery("select * from Book");
+            ResultSet rs = conn.createStatement().executeQuery("select * from BookWIthAuthor");
             while (rs.next()){
-                books.add(new Book(rs.getString("Id"),rs.getString("Title"),rs.getString("Author")));
+                books.add(new Book(rs.getString("Title"),rs.getString("FullName")));
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-        Id.setCellValueFactory(new PropertyValueFactory<>("Id"));
         Author.setCellValueFactory(new PropertyValueFactory<>("Author"));
         Title.setCellValueFactory(new PropertyValueFactory<>("Title"));
 
-        bookTable.setItems(books);
+        booksTable.setItems(books);
     }
 }
+
+

@@ -35,11 +35,11 @@ public class Book {
     }
 
 
-    public Book(String id, String title,String author) {
-        Id = id;
+    public Book(String title,String author) {
         this.Title = title;
         Author = author;
     }
+
 
     public Book(){}
 }

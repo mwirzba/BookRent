@@ -1,6 +1,7 @@
 package Controller.AdminControllers;
 
 
+import Controller.MainController;
 import Model.DbManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -14,6 +15,8 @@ import java.sql.SQLException;
 
 public class NewCustomerController {
 
+    private AdminController adminController;
+
     @FXML
     Button addButton;
 
@@ -26,11 +29,11 @@ public class NewCustomerController {
     @FXML
     Label customerExistsMessage;
 
-    @FXML
-    void initialize()
-    {
 
+    public void setAdminController(AdminController adminController) {
+        this.adminController = adminController;
     }
+
 
     @FXML
     void addNewCustomer()
@@ -56,7 +59,7 @@ public class NewCustomerController {
                         statement.setString(2, passwordTextField.getText());
                         statement.execute();
                         customerExistsMessage.setText("Pomyślnie dodano użytkownika");
-
+                        adminController.lastUser.setText(loginTextField.getText());
                     }
 
                 } catch (SQLException e) {

@@ -89,6 +89,7 @@ public class AdminController {
             if (rs.next()) {
                 hello.setText("Witaj "+rs.getString(1));
             }
+
         }
         catch (SQLException e) {
             e.printStackTrace();
@@ -140,6 +141,10 @@ public class AdminController {
         adminViewPane.getChildren().add(logins);
         adminPanel.getChildren().clear();
         adminPanel.getChildren().addAll(buttonPane, adminViewPane);
+        if(s.equals("/View/newCustomer.fxml")) {
+            NewCustomerController newCustomerController = loader.getController();
+            newCustomerController.setAdminController(this);
+        }
     }
 
 

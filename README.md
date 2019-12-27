@@ -1,2 +1,2 @@
 # BookRent
-Simple Java desctop app in JavaFx with crud operations
+Simple Java desktop app in JavaFx with crud operations
